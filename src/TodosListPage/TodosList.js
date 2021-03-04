@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class SignUpPage extends Component {
+export default class TodosList extends Component {
     render() {
         return (
             <div>
-                sign up
+                todo list
             </div>
         )
     }

@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+a {
+  margin: 5px;
+}
+
+label {
+  display: block
+}
+
+.todo {
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.todo:hover {
+  background-color:blueviolet;
+}
+
+.completed {
+  text-decoration: line-through;
+}
