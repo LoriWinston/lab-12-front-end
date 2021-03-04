@@ -29,8 +29,8 @@ export default class TodosListPage extends Component {
 
     handleTodoChange = e => this.setState({ todo: e.target.value })
 
-    handleComplete = async(todoId) => {
-        await completeTodo(todoId, this.props.user.token);
+    handleComplete = async(todoId, todo) => {
+        await completeTodo(todoId, todo, this.props.user.token);
 
         this.fetchTodos();
     }
@@ -46,7 +46,7 @@ export default class TodosListPage extends Component {
                 {this.state.todos.map(todo => 
                     <p 
                         key={`${todo.task}-${todo.id}`} 
-                        onClick={() => this.handleComplete(todo.id)}
+                        onClick={() => this.handleComplete(todo.id, todo.task)}
                         className={`
                             todo ${todo.completed 
                                 ? 'completed' 
