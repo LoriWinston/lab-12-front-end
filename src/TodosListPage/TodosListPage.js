@@ -8,6 +8,7 @@ export default class TodosListPage extends Component {
 
     componentDidMount = async () => {
         await this.fetchTodos();
+    console.log(this.state.todos);
     }
 
     fetchTodos = async () => {
@@ -44,14 +45,14 @@ export default class TodosListPage extends Component {
                 {!this.state.todos.length && <p>You're done, nice!</p>}
                 {this.state.todos.map(todo => 
                     <p 
-                        key={`${todo.todo}-${todo.id}`} 
+                        key={`${todo.task}-${todo.id}`} 
                         onClick={() => this.handleComplete(todo.id)}
                         className={`
                             todo ${todo.completed 
                                 ? 'completed' 
                                 : ''}`
                             }>    
-                        {todo.todo}
+                        {todo.task}
                     </p>)}
             </div>
         )
